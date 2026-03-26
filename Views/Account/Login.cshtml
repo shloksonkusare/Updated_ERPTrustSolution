@@ -1,0 +1,34 @@
+@model ERPTrustSolution.Models.LoginViewModel
+@{  Layout = "_Layout"; ViewData["Title"] = "Login"; }
+
+<div class="container-fluid">
+  <div class="row my-5">
+    <div class="col-auto mx-auto">
+      <h1 class="h1 text-white">@ViewBag.TrustName</h1>
+    </div>
+  </div>
+  <div class="row" style="height:400px">
+    <div class="col-md-3 col-sm-6 col-7 mx-auto p-3 border h-auto
+                rounded shadow align-self-center">
+      <h4 class="text-white text-center">Login</h4>
+      <form asp-action="Login" method="post">
+        <div class="mb-2">
+          <label class="text-white">Username</label>
+          <input asp-for="Username" class="form-control form-control-sm"/>
+          <span asp-validation-for="Username" class="text-danger small"></span>
+        </div>
+        <div class="mb-2">
+          <label class="text-white">Password</label>
+          <input asp-for="Password" class="form-control form-control-sm"/>
+          <span asp-validation-for="Password" class="text-danger small"></span>
+        </div>
+        @if (!ViewData.ModelState.IsValid) {
+          <div class="alert alert-danger py-1 small">
+            @Html.ValidationSummary(true)
+          </div>
+        }
+        <button type="submit" class="btn btn-warning mt-2">Login</button>
+      </form>
+    </div>
+  </div>
+</div> 
