@@ -1,0 +1,11 @@
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\css\custom.css
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\css\custom.min.css
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\back_disabled.png
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\back_enabled.png
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\back_enabled_hover.png
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\forward_disabled.png
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\forward_enabled.png
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\forward_enabled_hover.png
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\images\loading.gif
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\js\custom.js
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\wwwroot\css\build\js\custom.min.js

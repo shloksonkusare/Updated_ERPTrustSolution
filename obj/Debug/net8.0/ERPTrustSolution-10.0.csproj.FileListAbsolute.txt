@@ -63,6 +63,7 @@ E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\ERPTrustSolution-10
 E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\ERPTrustSolution-10.0.MvcApplicationPartsAssemblyInfo.cache
 E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\ERPTrustSolution-10.0.RazorAssemblyInfo.cache
 E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\ERPTrustSolution-10.0.RazorAssemblyInfo.cs
+E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\ERPTrustSolution-10.0.sourcelink.json
 E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\rjimswa.dswa.cache.json
 E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 E:\Dotcom\ERPTrustSolution\ERPTrustSolution\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
