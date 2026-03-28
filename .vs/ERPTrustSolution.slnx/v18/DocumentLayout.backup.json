@@ -3,28 +3,72 @@
   "WorkspaceRootPath": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\views\\accountwiseabstract\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\views\\accountwiseabstract\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\models\\viewmodels\\accountwiseabstractviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:models\\viewmodels\\accountwiseabstractviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\views\\outbalreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\views\\outbalreport\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\views\\studfeesledger\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\views\\studfeesledger\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\views\\changepassword\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\views\\changepassword\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\views\\report\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\views\\report\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\admin\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\admin\\views\\trustconfig\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\admin\\views\\trustconfig\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\controllers\\accountwiseabstractcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\controllers\\accountwiseabstractcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\controllers\\changepasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\controllers\\changepasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\controllers\\outbalreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\controllers\\outbalreportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\controllers\\reportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\controllers\\societyhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\controllers\\societyhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\society\\controllers\\studfeesledgercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\society\\controllers\\studfeesledgercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\admin\\controllers\\trustconfigcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\admin\\controllers\\trustconfigcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|e:\\dotcom\\erptrustsolution\\erptrustsolution\\areas\\admin\\controllers\\adminhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3B7A884-0A3C-C1D9-08A5-08C2653FCBFB}|ERPTrustSolution-10.0.csproj|solutionrelative:areas\\admin\\controllers\\adminhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,81 +78,228 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Views\\_ViewImports.cshtml",
-              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
-              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Views\\_ViewImports.cshtml",
-              "RelativeToolTip": "Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T11:40:29.431Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T11:39:03.369Z",
+              "Title": "AccountWiseAbstractViewModel.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Models\\ViewModels\\AccountWiseAbstractViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ViewModels\\AccountWiseAbstractViewModel.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Models\\ViewModels\\AccountWiseAbstractViewModel.cs",
+              "RelativeToolTip": "Models\\ViewModels\\AccountWiseAbstractViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T12:25:16.734Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Controllers\\AccountController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
-              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Controllers\\AccountController.cs",
-              "RelativeToolTip": "Controllers\\AccountController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAgwDQAAABAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\ChangePassword\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Society\\Views\\ChangePassword\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\ChangePassword\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Society\\Views\\ChangePassword\\Index.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T12:12:51.806Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T12:10:01.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\StudFeesLedger\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Society\\Views\\StudFeesLedger\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\StudFeesLedger\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Society\\Views\\StudFeesLedger\\Index.cshtml",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAAAHsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T10:39:25.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\Report\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Society\\Views\\Report\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\Report\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Society\\Views\\Report\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T10:38:33.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\OutBalReport\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Society\\Views\\OutBalReport\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\OutBalReport\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Society\\Views\\OutBalReport\\Index.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAD4v10AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T10:38:08.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\AccountWiseAbstract\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Society\\Views\\AccountWiseAbstract\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\AccountWiseAbstract\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Society\\Views\\AccountWiseAbstract\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T11:01:15.094Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Views\\TrustConfig\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Views\\TrustConfig\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Views\\TrustConfig\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Admin\\Views\\TrustConfig\\Index.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAD0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-27T11:15:02.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ChangePasswordController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\ChangePasswordController.cs",
+              "RelativeDocumentMoniker": "Areas\\Society\\Controllers\\ChangePasswordController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\ChangePasswordController.cs",
+              "RelativeToolTip": "Areas\\Society\\Controllers\\ChangePasswordController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T10:01:54.414Z"
+              "WhenOpened": "2026-03-27T11:06:37.149Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Areas\\Society\\Views\\Home\\Index.cshtml",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Areas\\Society\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAGIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-03-26T09:40:21.268Z"
+              "WhenOpened": "2026-03-27T10:37:42.629Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DashboardController.cs",
-              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Controllers\\DashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
-              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Controllers\\DashboardController.cs",
-              "RelativeToolTip": "Controllers\\DashboardController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAADAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "OutBalReportController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\OutBalReportController.cs",
+              "RelativeDocumentMoniker": "Areas\\Society\\Controllers\\OutBalReportController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\OutBalReportController.cs",
+              "RelativeToolTip": "Areas\\Society\\Controllers\\OutBalReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T09:29:12.731Z"
+              "WhenOpened": "2026-03-27T11:06:43.388Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAAADsAAABKAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "ReportController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\ReportController.cs",
+              "RelativeDocumentMoniker": "Areas\\Society\\Controllers\\ReportController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\ReportController.cs",
+              "RelativeToolTip": "Areas\\Society\\Controllers\\ReportController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-26T08:09:05.422Z"
+              "WhenOpened": "2026-03-27T11:06:51.007Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SocietyHomeController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\SocietyHomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\Society\\Controllers\\SocietyHomeController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\SocietyHomeController.cs",
+              "RelativeToolTip": "Areas\\Society\\Controllers\\SocietyHomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T11:06:56.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AccountWiseAbstractController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\AccountWiseAbstractController.cs",
+              "RelativeDocumentMoniker": "Areas\\Society\\Controllers\\AccountWiseAbstractController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\AccountWiseAbstractController.cs",
+              "RelativeToolTip": "Areas\\Society\\Controllers\\AccountWiseAbstractController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T11:06:28.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "StudFeesLedgerController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\StudFeesLedgerController.cs",
+              "RelativeDocumentMoniker": "Areas\\Society\\Controllers\\StudFeesLedgerController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Society\\Controllers\\StudFeesLedgerController.cs",
+              "RelativeToolTip": "Areas\\Society\\Controllers\\StudFeesLedgerController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T11:07:02.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "TrustConfigController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Controllers\\TrustConfigController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\TrustConfigController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Controllers\\TrustConfigController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\TrustConfigController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T11:06:14.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AdminHomeController.cs",
+              "DocumentMoniker": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Controllers\\AdminHomeController.cs",
+              "RelativeDocumentMoniker": "Areas\\Admin\\Controllers\\AdminHomeController.cs",
+              "ToolTip": "E:\\Dotcom\\ERPTrustSolution\\ERPTrustSolution\\Areas\\Admin\\Controllers\\AdminHomeController.cs",
+              "RelativeToolTip": "Areas\\Admin\\Controllers\\AdminHomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T11:05:34.48Z",
+              "EditorCaption": ""
             }
           ]
         }

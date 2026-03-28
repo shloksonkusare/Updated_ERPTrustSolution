@@ -1,0 +1,322 @@
+@model ERPTrustSolution.Models.AccountWiseAbstractViewModel
+@{
+    ViewData["Title"] = "Account Wise Abstract";
+}
+
+<div class="container-fluid mt-3">
+    <h4 class="fw-bold mb-3">Account Wise Abstract</h4>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible">
+            @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Message"] != null)
+    {
+        bool ok = TempData["IsSuccess"] as bool? ?? false;
+        <div class="alert @(ok ? "alert-success" : "alert-warning") alert-dismissible">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <div class="card shadow-sm">
+        <div class="card-header fw-semibold bg-primary text-white">Filter Options</div>
+        <div class="card-body">
+
+            <form asp-area="Society" asp-controller="AccountWiseAbstract"
+                  asp-action="GenerateReport" method="post" id="reportForm">
+                @Html.AntiForgeryToken()
+
+                @* <%-- Row 1: College + Academic Year + Course + Class + Branch --%> *@
+                    <div class="row g-3 mb-3">
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">College</label>
+                            <select name="SelectedCollegeId" id="ddlCollege"
+                                    class="form-select" onchange="onCollegeChange(this.value)">
+                                @foreach (var c in Model.Colleges)
+                                {
+                                    <option value="@c.Id" selected="@(c.Id == Model.SelectedCollegeId)">
+                                        @c.CollegeName
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label fw-semibold">Academic Year</label>
+                            <select name="SelectedAcadYear" id="ddlAcadYear" class="form-select">
+                                @foreach (var y in Model.AcadYears)
+                                {
+                                    <option value="@y" selected="@(y == Model.SelectedAcadYear)">@y</option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label fw-semibold">Course Level</label>
+                            <select name="SelectedCourseLevel" id="ddlCourseLevel" class="form-select"
+                                    onchange="onCourseLevelChange(this.value)">
+                                <option value="-">-</option>
+                                @foreach (var cl in Model.CourseLevels)
+                                {
+                                    <option value="@cl.DescriptionID"
+                                            selected="@(cl.DescriptionID == Model.SelectedCourseLevel)">
+                                        @cl.Description
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="form-label fw-semibold">Class</label>
+                            <select name="SelectedClass" id="ddlClass" class="form-select">
+                                <option value="-">-</option>
+                                @foreach (var cl in Model.Classes)
+                                {
+                                    <option value="@cl.ClassID"
+                                            selected="@(cl.ClassID == Model.SelectedClass)">
+                                        @cl.ClassID
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">Branch</label>
+                            <select name="SelectedBranch" id="ddlBranch" class="form-select">
+                                <option value="-">-</option>
+                                @foreach (var b in Model.Branches)
+                                {
+                                    <option value="@b.BranchCode"
+                                            selected="@(b.BranchCode == Model.SelectedBranch)">
+                                        @b.BranchName
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                    </div>
+
+                    @* <%-- Row 2: Receipt Book + Date filter --%> *@
+                        <div class="row g-3 mb-3 align-items-end">
+
+                            <div class="col-md-3">
+                                <label class="form-label fw-semibold">Receipt Book Type</label>
+                                <select name="SelectedRptBookNo" id="ddlRptBookTyp" class="form-select"
+                                        onchange="onReceiptBookChange(this.value)">
+                                    @foreach (var rb in Model.ReceiptBooks)
+                                    {
+                                        <option value="@rb.RptBookNo"
+                                                selected="@(rb.RptBookNo.ToString() == Model.SelectedRptBookNo)">
+                                            @rb.RptBookName
+                                        </option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox"
+                                           name="DateFilterEnabled" id="chkDate" value="true"
+                                    @(Model.DateFilterEnabled ? "checked" : "")
+                                           onchange="toggleDateRange(this.checked)" />
+                                    <label class="form-check-label fw-semibold" for="chkDate">
+                                        Filter by Date
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" id="dateFromGroup"
+                                 style="display:@(Model.DateFilterEnabled ? "block" : "none")">
+                                <label class="form-label fw-semibold">From Date</label>
+                                <input type="date" name="DateFrom" class="form-control"
+                                       value="@(Model.DateFrom?.ToString("yyyy-MM-dd"))" />
+                            </div>
+
+                            <div class="col-md-2" id="dateToGroup"
+                                 style="display:@(Model.DateFilterEnabled ? "block" : "none")">
+                                <label class="form-label fw-semibold">To Date</label>
+                                <input type="date" name="DateTo" class="form-control"
+                                       value="@(Model.DateTo?.ToString("yyyy-MM-dd"))" />
+                            </div>
+
+                        </div>
+
+                       @*  <%-- Row 3: Fees checklist --%> *@
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold">Fees</label>
+                                <div class="border rounded p-2 d-flex flex-wrap gap-3"
+                                     id="feesCheckList" style="max-height:160px; overflow-y:auto">
+                                    @if (Model.FeesList.Any())
+                                    {
+                                        foreach (var fee in Model.FeesList)
+                                        {
+                                            bool isSelected = Model.SelectedFeeIds.Contains(fee.FeeId.ToString());
+                                            <div class="form-check">
+                                                <input class="form-check-input fee-check" type="checkbox"
+                                                       name="SelectedFeeIds" value="@fee.FeeId"
+                                                       id="fee_@fee.FeeId"
+                                                @(isSelected ? "checked" : "") />
+                                                <label class="form-check-label" for="fee_@fee.FeeId">
+                                                    @fee.FeeName
+                                                </label>
+                                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted small">
+                                            Select Course Level and Receipt Book to load fees.
+                                        </span>
+                                    }
+                                </div>
+                                <div class="mt-1">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary"
+                                            onclick="toggleAllFees(true)">
+                                        Select All
+                                    </button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary ms-1"
+                                            onclick="toggleAllFees(false)">
+                                        Deselect All
+                                    </button>
+                                </div>
+                            </div>
+
+                            <%-- Submit --%>
+                                <div class="d-flex gap-2">
+                                    <button type="submit" class="btn btn-primary px-4" id="btnGenerate">
+                                        Generate Report
+                                    </button>
+                                    <a asp-area="Society" asp-controller="Report" asp-action="Index"
+                                           class="btn btn-outline-secondary">
+                                        View Last Report
+                                    </a>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                @section Scripts {
+                    <script>
+                        const collegeId = () => document.getElementById('ddlCollege').value;
+
+                        function toggleDateRange(show) {
+                            document.getElementById('dateFromGroup').style.display = show ? 'block' : 'none';
+                            document.getElementById('dateToGroup').style.display   = show ? 'block' : 'none';
+                        }
+
+                        function toggleAllFees(state) {
+                            document.querySelectorAll('.fee-check').forEach(cb => cb.checked = state);
+                        }
+
+                        function onCollegeChange(cId) {
+                            clearDropdown('ddlAcadYear');
+                            clearDropdown('ddlCourseLevel', [{ value: '-', text: '-' }]);
+                            clearDropdown('ddlClass',       [{ value: '-', text: '-' }]);
+                            clearDropdown('ddlBranch',      [{ value: '-', text: '-' }]);
+                            clearDropdown('ddlRptBookTyp');
+                            clearFeesList();
+
+                            fetchJson(`@Url.Action("GetAcadYears",    "AccountWiseAbstract", new { area = "Society" })?collegeId=${cId}`,
+                                data => fillDropdown('ddlAcadYear', data, v => v, v => v));
+
+                            fetchJson(`@Url.Action("GetCourseLevels", "AccountWiseAbstract", new { area = "Society" })?collegeId=${cId}`,
+                                data => fillDropdown('ddlCourseLevel', data,
+                                    item => item.descriptionID, item => item.description, '-'));
+
+                            fetchJson(`@Url.Action("GetReceiptBooks", "AccountWiseAbstract", new { area = "Society" })?collegeId=${cId}`,
+                                data => fillDropdown('ddlRptBookTyp', data,
+                                    item => item.rptBookNo, item => item.rptBookName));
+                        }
+
+                        function onCourseLevelChange(level) {
+                            clearDropdown('ddlClass',  [{ value: '-', text: '-' }]);
+                            clearDropdown('ddlBranch', [{ value: '-', text: '-' }]);
+                            clearFeesList();
+                            if (level === '-') return;
+
+                            const cId = collegeId();
+                            fetchJson(`@Url.Action("GetClasses",  "AccountWiseAbstract", new { area = "Society" })?collegeId=${cId}&level=${encodeURIComponent(level)}`,
+                                data => fillDropdown('ddlClass', data, item => item.classID, item => item.classID, '-'));
+
+                            fetchJson(`@Url.Action("GetBranches", "AccountWiseAbstract", new { area = "Society" })?collegeId=${cId}&level=${encodeURIComponent(level)}`,
+                                data => fillDropdown('ddlBranch', data, item => item.branchCode, item => item.branchName, '-'));
+
+                            loadFeesList(level, document.getElementById('ddlRptBookTyp').value);
+                        }
+
+                        function onReceiptBookChange(rptBookNo) {
+                            loadFeesList(document.getElementById('ddlCourseLevel').value, rptBookNo);
+                        }
+
+                        function loadFeesList(level, rptBookNo) {
+                            if (!level || level === '-' || !rptBookNo) { clearFeesList(); return; }
+                            const cId = collegeId();
+                            fetchJson(
+                                `@Url.Action("GetFeesList", "AccountWiseAbstract", new { area = "Society" })?collegeId=${cId}&level=${encodeURIComponent(level)}&rptBookNo=${rptBookNo}`,
+                                data => {
+                                    const box = document.getElementById('feesCheckList');
+                                    if (!data.length) {
+                                        box.innerHTML = '<span class="text-muted small">No fees found.</span>';
+                                        return;
+                                    }
+                                    box.innerHTML = data.map(f =>
+                                        `<div class="form-check">
+                                            <input class="form-check-input fee-check" type="checkbox"
+                                                   name="SelectedFeeIds" value="${f.feeId}" id="fee_${f.feeId}" checked />
+                                            <label class="form-check-label" for="fee_${f.feeId}">${f.feeName}</label>
+                                        </div>`
+                                    ).join('');
+                                }
+                            );
+                        }
+
+                        function clearFeesList() {
+                            document.getElementById('feesCheckList').innerHTML =
+                                '<span class="text-muted small">Select Course Level and Receipt Book to load fees.</span>';
+                        }
+
+                        function clearDropdown(id, defaults) {
+                            const sel = document.getElementById(id);
+                            sel.innerHTML = '';
+                            (defaults || []).forEach(d => {
+                                const opt = document.createElement('option');
+                                opt.value = d.value; opt.text = d.text;
+                                sel.appendChild(opt);
+                            });
+                        }
+
+                        function fillDropdown(id, items, valueFn, textFn, prependValue) {
+                            const sel = document.getElementById(id);
+                            sel.innerHTML = '';
+                            if (prependValue !== undefined) {
+                                const opt = document.createElement('option');
+                                opt.value = prependValue; opt.text = prependValue;
+                                sel.appendChild(opt);
+                            }
+                            items.forEach(item => {
+                                const opt = document.createElement('option');
+                                opt.value = valueFn(item); opt.text = textFn(item);
+                                sel.appendChild(opt);
+                            });
+                        }
+
+                        function fetchJson(url, onSuccess) {
+                            fetch(url)
+                                .then(r => r.json())
+                                .then(resp => { if (resp.success) onSuccess(resp.data); })
+                                .catch(err => console.error('Fetch error:', err));
+                        }
+
+                        document.getElementById('reportForm').addEventListener('submit', function () {
+                            document.getElementById('btnGenerate').disabled = true;
+                            document.getElementById('btnGenerate').textContent = 'Generating...';
+                        });
+                    </script>
+                }

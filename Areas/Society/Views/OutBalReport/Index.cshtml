@@ -1,0 +1,127 @@
+@model ERPTrustSolution.Models.OutBalReportViewModel
+@{
+    ViewData["Title"] = "Outstanding Balance Report";
+}
+
+<div class="container-fluid mt-3">
+    <h4 class="fw-bold mb-3">Outstanding Balance Report</h4>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    @* {{!-- ── Filters ── --}} *@
+    <form asp-controller="OutBalReport" asp-action="Filter"
+          asp-area="Society" method="post" class="row g-2 mb-3 align-items-end">
+        @Html.AntiForgeryToken()
+
+        <div class="col-md-3">
+            <label class="form-label fw-semibold">College</label>
+            <select name="SelectedCollegeId" class="form-select" onchange="this.form.submit()">
+                @foreach (var c in Model.Colleges)
+                {
+                    <option value="@c.Id" selected="@(c.Id == Model.SelectedCollegeId)">
+                        @c.CollegeName
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label fw-semibold">Academic Year</label>
+            <select name="SelectedAcadYear" class="form-select">
+                @foreach (var y in Model.AcadYears)
+                {
+                    <option value="@y" selected="@(y == Model.SelectedAcadYear)">@y</option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label fw-semibold">Class</label>
+            <select name="SelectedClass" class="form-select">
+                <option value="-1">All Classes</option>
+                @foreach (var cl in Model.Classes)
+                {
+                    <option value="@cl.StudClass" selected="@(cl.StudClass == Model.SelectedClass)">
+                        @cl.StudClass
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-md-2">
+            <label class="form-label fw-semibold">Branch</label>
+            <select name="SelectedBranch" class="form-select">
+                <option value="-1">All Branches</option>
+                @foreach (var b in Model.Branches)
+                {
+                    <option value="@b.BranchCode" selected="@(b.BranchCode == Model.SelectedBranch)">
+                        @b.BranchName
+                    </option>
+                }
+            </select>
+        </div>
+
+        <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Apply Filter</button>
+        </div>
+    </form>
+
+    @* {{!-- ── Grid ── --}} *@
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-sm align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Branch</th>
+                    <th class="text-end">Fee Payable (₹)</th>
+                    <th class="text-end">Fee Paid (₹)</th>
+                    <th class="text-end">Balance (₹)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.Students.Any())
+                {
+                    int sr = 1;
+                    foreach (var s in Model.Students)
+                    {
+                        <tr>
+                            <td>@sr++</td>
+                            <td>@s.StudId</td>
+                            <td>@s.Name</td>
+                            <td>@s.Category</td>
+                            <td>@s.BranchName</td>
+                            <td class="text-end">@s.FeePayable.ToString("N2")</td>
+                            <td class="text-end">@s.FeePaid.ToString("N2")</td>
+                            <td class="text-end @(s.Balance > 0 ? "text-danger" : "text-success")">
+                                @s.Balance.ToString("N2")
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="8" class="text-center text-muted">No records found.</td>
+                    </tr>
+                }
+            </tbody>
+            @if (Model.Students.Any())
+            {
+                <tfoot class="fw-bold table-secondary">
+                    <tr>
+                        <td colspan="5">Total</td>
+                        <td class="text-end">@Model.PayableTotal.ToString("N2")</td>
+                        <td class="text-end">@Model.PaidTotal.ToString("N2")</td>
+                        <td class="text-end">@Model.BalanceTotal.ToString("N2")</td>
+                    </tr>
+                </tfoot>
+            }
+        </table>
+    </div>
+</div>

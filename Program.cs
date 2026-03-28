@@ -51,6 +51,21 @@ app.UseAuthorization();
 app.UseSession();
 
 // ✅ Default route FIRST, area route SECOND
+// Add this BEFORE app.MapControllerRoute(...)
+app.MapAreaControllerRoute(
+    name: "society",
+    areaName: "Society",
+    pattern: "Society/{controller=Home}/{action=Index}/{id?}");
+
+app.MapAreaControllerRoute(
+    name: "admin",
+    areaName: "Admin",
+    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Account}/{action=Login}/{id?}");
+
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");

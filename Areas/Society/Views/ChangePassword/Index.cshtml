@@ -1,0 +1,50 @@
+@model ERPTrustSolution.Models.ChangePasswordViewModel
+@{
+    ViewData["Title"] = "Change Password";
+}
+
+<div class="container mt-4" style="max-width:480px">
+    <div class="card shadow-sm">
+        <div class="card-header fw-semibold bg-primary text-white">Change Password</div>
+        <div class="card-body">
+
+            @if (TempData["Message"] != null)
+            {
+                bool isSuccess = TempData["IsSuccess"] as bool? ?? false;
+                <div class="alert @(isSuccess ? "alert-success" : "alert-danger")">
+                    @TempData["Message"]
+                </div>
+            }
+
+            <form asp-controller="ChangePassword" asp-action="Change"
+                  asp-area="Society" method="post">
+                @Html.AntiForgeryToken()
+
+                <div class="mb-3">
+                    <label asp-for="OldPassword" class="form-label">Current Password</label>
+                    <input asp-for="OldPassword" type="password" class="form-control" autofocus />
+                    <span asp-validation-for="OldPassword" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="NewPassword" class="form-label">New Password</label>
+                    <input asp-for="NewPassword" type="password" class="form-control" />
+                    <span asp-validation-for="NewPassword" class="text-danger small"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ConfirmPassword" class="form-label">Confirm New Password</label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger small"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Change Password</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

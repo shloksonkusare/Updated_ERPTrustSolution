@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container mt-4">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+        <h4 class="fw-bold mb-0">Administrator Dashboard</h4>
+        <span class="text-muted">Welcome, <strong>@ViewBag.UserName</strong></span>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="fs-1 mb-2">🏫</div>
+                    <h6 class="fw-semibold">Trust Configuration</h6>
+                    <p class="text-muted small">Manage college connections and settings</p>
+                    <a asp-area="Admin" asp-controller="TrustConfig" asp-action="Index"
+                       class="btn btn-primary btn-sm">Open</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="fs-1 mb-2">🔑</div>
+                    <h6 class="fw-semibold">Change Password</h6>
+                    <p class="text-muted small">Update your login credentials</p>
+                    <a asp-area="Society" asp-controller="ChangePassword" asp-action="Index"
+                       class="btn btn-outline-primary btn-sm">Open</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <div class="fs-1 mb-2">🚪</div>
+                    <h6 class="fw-semibold">Logout</h6>
+                    <p class="text-muted small">Sign out of the application</p>
+                    <a asp-controller="Account" asp-action="Logout"
+                       class="btn btn-outline-danger btn-sm">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

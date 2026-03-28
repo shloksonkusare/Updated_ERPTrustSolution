@@ -19,6 +19,7 @@ public class AccountController : Controller
     public IActionResult Login() => View();
 
     [HttpPost]
+    [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginViewModel model)
     {
         if (!ModelState.IsValid) return View(model);
@@ -41,8 +42,8 @@ public class AccountController : Controller
 
         var claims = new List<Claim>
         {
-            new(ClaimTypes.Name,  (string)row.Userlogin),
-            new(ClaimTypes.Role,  (string)row.Category)
+            new(ClaimTypes.Name, (string)row.Userlogin),
+            new(ClaimTypes.Role, (string)row.Category)
         };
         var identity = new ClaimsIdentity(claims,
             CookieAuthenticationDefaults.AuthenticationScheme);
@@ -51,7 +52,7 @@ public class AccountController : Controller
         return (string)row.Category switch
         {
             "Society" => RedirectToAction("Index", "Dashboard"),
-            "Administrator" => RedirectToAction("Index", "Admin"),
+            "Administrator" => RedirectToAction("Index", "Home", new { area = "Admin" }),
             _ => RedirectToAction("Login")
         };
     }

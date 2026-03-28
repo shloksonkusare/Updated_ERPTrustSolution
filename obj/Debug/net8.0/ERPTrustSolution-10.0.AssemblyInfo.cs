@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ERPTrustSolution-10.0")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+469e62b0475862c2991b7c8b4f279a2e9f31e4f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b666a965474f8f932b038cc18f789c7bc2cf650")]
 [assembly: System.Reflection.AssemblyProductAttribute("ERPTrustSolution-10.0")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ERPTrustSolution-10.0")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

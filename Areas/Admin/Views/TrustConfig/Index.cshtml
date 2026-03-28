@@ -1,0 +1,153 @@
+@model ERPTrustSolution.Models.TrustConfigViewModel
+@{
+    ViewData["Title"] = "Trust Configuration";
+}
+
+<div class="container-fluid mt-3">
+    <h4 class="fw-bold mb-3">Trust Configuration</h4>
+
+    @if (TempData["Message"] != null)
+    {
+        bool ok = TempData["IsSuccess"] as bool? ?? false;
+        <div class="alert @(ok ? "alert-success" : "alert-danger") alert-dismissible">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    @* {{!-- ── Add / Edit form ── --}} *@
+    <div class="card shadow-sm mb-4">
+        <div class="card-header fw-semibold">
+            @(Model.EditRow != null ? "Edit College" : "Add New College")
+        </div>
+        <div class="card-body">
+            @if (Model.EditRow != null)
+            {
+                @* { { !--Edit mode--} } *@
+                <form asp-controller="TrustConfig" asp-action="Update"
+                      asp-area="Admin" method="post" class="row g-2">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="EditRow.Id" />
+
+                    <div class="col-md-2">
+                        <label class="form-label">College Name</label>
+                        <input asp-for="EditRow.CollegeName" class="form-control" />
+                        <span asp-validation-for="EditRow.CollegeName" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Data Source</label>
+                        <input asp-for="EditRow.DataSource" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Initial Catalog</label>
+                        <input asp-for="EditRow.InitialCatalog" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">User ID</label>
+                        <input asp-for="EditRow.UserID" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Password</label>
+                        <input asp-for="EditRow.Password" type="password" class="form-control" />
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end gap-1">
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <a asp-area="Admin" asp-controller="TrustConfig" asp-action="Index"
+                           class="btn btn-outline-secondary">Cancel</a>
+                    </div>
+                </form>
+            }
+            else
+            {
+                @* { { !--Add mode--} } *@
+                <form asp-controller="TrustConfig" asp-action="Save"
+                      asp-area="Admin" method="post" class="row g-2">
+                    @Html.AntiForgeryToken()
+
+                    <div class="col-md-2">
+                        <label class="form-label">College Name</label>
+                        <input asp-for="CollegeName" class="form-control" />
+                        <span asp-validation-for="CollegeName" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Data Source</label>
+                        <input asp-for="DataSource" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Initial Catalog</label>
+                        <input asp-for="InitialCatalog" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">User ID</label>
+                        <input asp-for="UserID" class="form-control" />
+                    </div>
+                    <div class="col-md-2">
+                        <label class="form-label">Password</label>
+                        <input asp-for="Password" type="password" class="form-control" />
+                    </div>
+                    <div class="col-md-2 d-flex align-items-end">
+                        <button type="submit" class="btn btn-primary w-100">Save</button>
+                    </div>
+                </form>
+            }
+        </div>
+    </div>
+
+    @* {{!-- ── Grid ── --}} *@
+    <div class="card shadow-sm">
+        <div class="card-header fw-semibold">Registered Colleges</div>
+        <div class="card-body p-0">
+            <table class="table table-bordered table-hover table-sm mb-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>College Name</th>
+                        <th>Data Source</th>
+                        <th>Initial Catalog</th>
+                        <th>User ID</th>
+                        <th class="text-center">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Rows.Any())
+                    {
+                        int sr = 1;
+                        foreach (var row in Model.Rows)
+                        {
+                            <tr>
+                                <td>@sr++</td>
+                                <td>@row.CollegeName</td>
+                                <td>@row.DataSource</td>
+                                <td>@row.InitialCatalog</td>
+                                <td>@row.UserID</td>
+                                <td class="text-center">
+                                    <a asp-area="Admin" asp-controller="TrustConfig"
+                                       asp-action="Edit" asp-route-id="@row.Id"
+                                       class="btn btn-xs btn-outline-warning me-1">Edit</a>
+
+                                    <form asp-area="Admin" asp-controller="TrustConfig"
+                                          asp-action="Delete" method="post" class="d-inline"
+                                          onsubmit="return confirm('Delete @row.CollegeName?')">
+                                        @Html.AntiForgeryToken()
+                                        <input type="hidden" name="id" value="@row.Id" />
+                                        <button type="submit" class="btn btn-xs btn-outline-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6" class="text-center text-muted">No colleges registered yet.</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,166 @@
+@model ERPTrustSolution.Models.SocietyHomeViewModel
+@{
+    ViewData["Title"] = "Society Dashboard";
+}
+
+<div class="container-fluid mt-3">
+    <h4 class="mb-3 fw-bold">College Overview</h4>
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["Error"]</div>
+    }
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>College</th>
+                    <th>Academic Year</th>
+                    <th class="text-center">Total Admissions</th>
+                    <th class="text-end">Today's Fees (₹)</th>
+                    <th class="text-end">Fee Payable (₹)</th>
+                    <th class="text-end">Fee Paid (₹)</th>
+                    <th class="text-end">Balance (₹)</th>
+                    <th class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var col in Model.Colleges)
+                {
+                    <tr id="row-@col.Id" class="@(col.HasError ? "table-warning" : "")">
+                        <td>@col.CollegeName</td>
+                        <td>
+                            @if (col.AcadYears.Any())
+                            {
+                                <select class="form-select form-select-sm year-select"
+                                        data-college-id="@col.Id"
+                                        onchange="refreshRow(@col.Id, this.value)">
+                                    @foreach (var y in col.AcadYears)
+                                    {
+                                        <option value="@y" selected="@(y == col.SelectedAcadYear)">@y</option>
+                                    }
+                                </select>
+                            }
+                            else
+                            {
+                                <span class="text-muted">N/A</span>
+                            }
+                        </td>
+                        <td class="text-center" id="admissions-@col.Id">@col.TotalAdmissions</td>
+                        <td class="text-end" id="todaysfees-@col.Id">@col.TodaysFees</td>
+                        <td class="text-end" id="payable-@col.Id">@col.FeePayable</td>
+                        <td class="text-end" id="paid-@col.Id">@col.FeePaid</td>
+                        <td class="text-end" id="balance-@col.Id">@col.Balance</td>
+                        <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary me-1"
+                                    onclick="showDetails(@col.Id, document.querySelector('[data-college-id=\'@col.Id\']')?.value ?? '@col.SelectedAcadYear')">
+                                Details
+                            </button>
+                            <button class="btn btn-sm btn-outline-success"
+                                    onclick="showTodaysCollection(@col.Id)">
+                                Today's Collection
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot class="fw-bold table-secondary">
+                <tr>
+                    <td colspan="2">Total</td>
+                    <td class="text-center">@Model.TotalAdmissionsSum</td>
+                    <td class="text-end">@Model.TodaysFeesSum.ToString("N2")</td>
+                    <td class="text-end">@Model.PayableSum.ToString("N2")</td>
+                    <td class="text-end">@Model.PaidSum.ToString("N2")</td>
+                    <td class="text-end">@Model.BalanceSum.ToString("N2")</td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+@* {{!-- ── Details Modal ── --}} *@
+<div class="modal fade" id="detailsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Class-wise Fee Breakdown</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="detailsBody">
+                <div class="text-center"><div class="spinner-border"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* {{!-- ── Today's Collection Modal ── --}} *@
+<div class="modal fade" id="todaysModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Today's Collection</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body" id="todaysBody">
+                <div class="text-center"><div class="spinner-border"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function refreshRow(collegeId, acadYear) {
+            fetch('@Url.Action("RefreshRow", "Home", new { area = "Society" })', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ collegeId, acadYear })
+            })
+            .then(r => r.json())
+            .then(data => {
+                if (!data.success) return;
+                document.getElementById('admissions-' + collegeId).textContent = data.totalAdmissions;
+                document.getElementById('todaysfees-' + collegeId).textContent = data.todaysFees;
+                document.getElementById('payable-'    + collegeId).textContent = data.feePayable;
+                document.getElementById('paid-'       + collegeId).textContent = data.feePaid;
+                document.getElementById('balance-'    + collegeId).textContent = data.balance;
+            });
+        }
+
+        function showDetails(collegeId, acadYear) {
+            const modal = new bootstrap.Modal(document.getElementById('detailsModal'));
+            document.getElementById('detailsBody').innerHTML = '<div class="text-center"><div class="spinner-border"></div></div>';
+            modal.show();
+            fetch(`@Url.Action("CollegeDetails", "Home", new { area = "Society" })?collegeId=${collegeId}&acadYear=${acadYear}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (!data.success) { document.getElementById('detailsBody').innerHTML = 'Error loading data.'; return; }
+                    let html = '<table class="table table-sm table-bordered"><thead class="table-dark"><tr><th>Class</th><th class="text-end">Payable</th><th class="text-end">Paid</th><th class="text-end">Balance</th></tr></thead><tbody>';
+                    data.data.forEach(r => {
+                        html += `<tr><td>${r.studClass}</td><td class="text-end">${r.feePayable}</td><td class="text-end">${r.feePaid}</td><td class="text-end">${r.balance}</td></tr>`;
+                    });
+                    html += '</tbody></table>';
+                    document.getElementById('detailsBody').innerHTML = html;
+                });
+        }
+
+        function showTodaysCollection(collegeId) {
+            const modal = new bootstrap.Modal(document.getElementById('todaysModal'));
+            document.getElementById('todaysBody').innerHTML = '<div class="text-center"><div class="spinner-border"></div></div>';
+            modal.show();
+            fetch(`@Url.Action("TodaysCollection", "Home", new { area = "Society" })?collegeId=${collegeId}`)
+                .then(r => r.json())
+                .then(data => {
+                    if (!data.success) { document.getElementById('todaysBody').innerHTML = 'Error loading data.'; return; }
+                    let html = '<table class="table table-sm table-bordered"><thead class="table-dark"><tr><th>Class</th><th class="text-end">Amount (₹)</th></tr></thead><tbody>';
+                    data.data.forEach(r => {
+                        html += `<tr><td>${r.classId}</td><td class="text-end">${r.paidAmt}</td></tr>`;
+                    });
+                    html += '</tbody></table>';
+                    document.getElementById('todaysBody').innerHTML = html;
+                });
+        }
+    </script>
+}
